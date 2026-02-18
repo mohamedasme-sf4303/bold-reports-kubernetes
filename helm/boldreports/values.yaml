@@ -66,6 +66,8 @@ imagePullSecrets: []
 loadBalancer:
   type: nginx
   # ingressClassName: nginx
+  # gatewayName: 
+  # gatewayNamespace: 
   affinityCookie:
     enable: true
     affinityCookieExpiration: 600
