@@ -106,7 +106,15 @@ For encoding the values to base64 please run the following command in powershell
  
 ## Load Balancing
 
-Currently we have provided support for `Nginx` and `Istio` as Load Balancers in Bold Reports. By default Nginx is used as reverse proxy for Bold Reports.
+Currently we have provided support for `Nginx`, `Istio`, `Kong` and `Traefik` as Load Balancers in Bold Reports. By default Nginx is used as reverse proxy for Bold Reports.
+
+NOTE : The Kubernetes Ingress NGINX Controller project has announced its retirement in **March 2026**. After this date:
+ 
+- No new releases or updates
+- No security patches
+- No bug fixes
+ 
+For more information, see the [official Kubernetes blog announcement](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement).
 
 ### Ingress-Nginx
 
@@ -213,6 +221,19 @@ If you need to configure Bold Reports with Istio,
 </table>
 <br/>
 
+###  Install Traefik using helm
+If you want to configure latest Traefik using helm in your cluster, please use below commands.
+
+Add the Traefik helm repository.
+```
+helm repo add traefik https://traefik.github.io/charts
+helm repo update
+```
+Run the following command to delpoy Traefik in your cluster.
+```
+helm install traefik traefik/traefik --namespace traefik --create-namespace
+```
+
 ### Get Ingress IP
 
 Run the following command to get the ingress IP address.
@@ -223,6 +244,9 @@ kubectl get service/ingress-nginx-controller -n ingress-nginx
 
 # Istio
 kubectl get service/istio-ingressgateway -n istio-system
+
+# Traefik 
+kubectl get service/traefik -n traefik
 ```
 
 Note the ingress `EXTERNAL-IP` address and map it with your DNS. If you do not have the DNS and want to use the application, then you can use the ingress IP address.
