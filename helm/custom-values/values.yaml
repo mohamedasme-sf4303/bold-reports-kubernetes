@@ -39,6 +39,8 @@ loadBalancer:
   type: nginx
   # ingresspathtype: Implementspecific
   # ingressClassName: nginx
+  # gatewayName: 
+  # gatewayNamespace: 
   affinityCookie:
     enable: true
     affinityCookieExpiration: 600
