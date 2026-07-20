@@ -152,10 +152,7 @@ For Helm chart, you'll need to craft a `values.yaml`.
 > **Note:** Items marked with `*` are mandatory fields in values.yaml
 
 ## Environment variables for configuring Storage in backend
-
-The following environment variables are optional. If not provided, Bold BI will use the default configured values.
-
-<br/>
+The following environment variables are optional. If not provided, Bold Reports will use the default configured values.
 
 ### OCI Storage Configuration
 
