@@ -168,45 +168,50 @@ instanceConfig:
     replicaCount: 1
     minReplicas: 1
     maxReplicas: 20
-    cpuResourceRequests: 150m
-    memoryResourceRequests: 550Mi
+    cpuResourceRequests: 250m
+    memoryResourceRequests: 750Mi
   - app: reports-jobs
-    replicaCount: 1
-    minReplicas: 1
-    maxReplicas: 1
-    cpuResourceRequests: 150m
-    memoryResourceRequests: 550Mi
-  - app: reports-reportservice
     replicaCount: 1
     minReplicas: 1
     maxReplicas: 1
     cpuResourceRequests: 250m
     memoryResourceRequests: 750Mi
+  - app: reports-reportservice
+    replicaCount: 1
+    minReplicas: 1
+    maxReplicas: 1
+    cpuResourceRequests: 350m
+    memoryResourceRequests: 950Mi
   - app: reports-viewer
     replicaCount: 1
     minReplicas: 1
-    maxReplicas: 20
-    cpuResourceRequests: 150m
-    memoryResourceRequests: 550Mi
+    maxReplicas: 5
+    cpuResourceRequests: 250m
+    memoryResourceRequests: 750Mi
   - app: bold-etl
     replicaCount: 1
     minReplicas: 1
-    maxReplicas: 20
-    cpuResourceRequests: 150m
-    memoryResourceRequests: 550Mi
+    maxReplicas: 5
+    cpuResourceRequests: 250m
+    memoryResourceRequests: 750Mi
   - app: reports-ai
     replicaCount: 1
     minReplicas: 1
-    maxReplicas: 20
-    cpuResourceRequests: 150m
-    memoryResourceRequests: 550Mi
+    maxReplicas: 5
+    cpuResourceRequests: 250m
+    memoryResourceRequests: 750Mi
   - app: reports-mcp
     replicaCount: 1
     minReplicas: 1
-    maxReplicas: 20
-    cpuResourceRequests: 150m
-    memoryResourceRequests: 550Mi
-    
+    maxReplicas: 5
+    cpuResourceRequests: 250m
+    memoryResourceRequests: 750Mi
+  - app: reports-export
+    replicaCount: 1
+    minReplicas: 1
+    maxReplicas: 5
+    cpuResourceRequests: 250m
+    memoryResourceRequests: 750Mi
 service:
   type: ClusterIP
   port: 80
